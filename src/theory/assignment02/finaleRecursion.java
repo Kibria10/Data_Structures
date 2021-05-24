@@ -14,8 +14,9 @@ public class finaleRecursion
     public static int saved[];
     public static int[] encodeWord(String a, int i, int random) {
         if (saved == null) {
-        saved = new int[a.length()];
-    }
+            saved = new int[a.length()];
+        }
+
         if (i>a.length()){
             return saved;
         }
@@ -26,6 +27,8 @@ public class finaleRecursion
             saved[i]= asciiVal+random;
             encodeWord(a, i+1, random);
         }
+
+
         return saved;
     }
 }
