@@ -21,7 +21,7 @@ public class arrays {
         shiftLeft(a, 3);
         // 2
         int [] b = {10, 20, 30, 40, 50, 60, 70};
-        rotateLeft(b, 3);
+        rotateLeft(b, 1);
         //2
         int [] c =  {10, 20, 30, 40, 50, 0, 0, 0};
 

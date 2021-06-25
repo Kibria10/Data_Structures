@@ -18,16 +18,17 @@ class Result {
      * output:  19:05:45
      */
 
+
     public static String timeConversion(String s)  throws ParseException {
         // Write your code here
         final String OLD_FORMAT = "hh:mm:ssaa";
         final String NEW_FORMAT = "HH:mm:ss";
 
-        String old12hourFormat = s;
+        String old124hourFormat = s;
         String new24hourFormat;
 
         SimpleDateFormat sdf = new SimpleDateFormat(OLD_FORMAT);
-        Date d = sdf.parse(old12hourFormat);
+        Date d = sdf.parse(old124hourFormat);
         sdf.applyPattern(NEW_FORMAT);
         new24hourFormat = sdf.format(d);
         return new24hourFormat;
