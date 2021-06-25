@@ -26,8 +26,8 @@ public class A51_streamCipher {
 //        }
 
         int x[]={1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1}; //19 bits
-        int y[]={1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,0,1}; //22 bits
-        int z[]={1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,1}; //23 bits
+        int y[]={1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0,0,1,1}; //22 bits
+        int z[]={1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0}; //23 bits
 
         streamCipherA51(x,y,z);
 
@@ -39,7 +39,7 @@ public class A51_streamCipher {
         }
     }
 
-    public static int saved[]= new int[16];
+    public static int saved[]= new int[4];
 
 
     public static int[] streamCipherA51(int x[],int y[],int z[] ) {
@@ -71,8 +71,8 @@ public class A51_streamCipher {
         System.out.println("Major: " + major);
 
 /////////////// key is how many times we want our key bits to be produced ///////////////
-        for(int key = 0; key<16; key++){
-
+        for(int key = 0; key<4; key++){
+            System.out.println("For Key:"+ key);
 ///////////////////FOR X/////////////////
             int d = x[13]^x[16]^x[17]^x[18];
             System.out.println();
