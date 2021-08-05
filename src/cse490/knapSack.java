@@ -7,7 +7,15 @@ public class knapSack {
         int e = 1011011;
         int[] sik = {2, 6, 10, 23, 50, 110, 250};
         int[] gk = new int[sik.length];
-        int[] keysAddition = new int [sik.length];
+        int[] keysEncryption = new int[sik.length];
+
+        System.out.println("ENCRYPTING: ");
+        int S = encryptKnapsack(m,n,e,sik,gk,keysEncryption);
+        System.out.println("DECRYPTING: ");
+        decryptKnapsack(S,sik);
+
+    }
+    static int encryptKnapsack(int m, int n, int e, int sik[], int gk[], int keysEncryption[]){
 
         //creating our General knapsack keys (public keys)
          for(int i =0; i< sik.length; i++)
@@ -21,13 +29,13 @@ public class knapSack {
             keys[i] = temp.charAt(i) - '0';
         }
         //encrypting keys
-        for (int i = 0; i < keysAddition.length; i++) {
-            keysAddition[i] = gk[i]*keys[i];
+        for (int i = 0; i < keysEncryption.length; i++) {
+            keysEncryption[i] = gk[i]*keys[i];
         }
 
         int sum = 0;
-        for(int i=0; i< keysAddition.length; i++){
-            sum = sum + keysAddition[i];
+        for(int i=0; i< keysEncryption.length; i++){
+            sum = sum + keysEncryption[i];
         }
         // finding the inverse modular of m and n
         int inv=0;
@@ -41,15 +49,10 @@ public class knapSack {
         int S = (sum * inv) % n;
         System.out.println("S: "+ S);
 
-
-
-        decryptKnapsack(S,sik);
+        return S;
         }
 
     static int[] decryptKnapsack(int S, int[] sik){
-
-        System.out.println("DECRYPTING: ");
-
     int[] saved = new int [sik.length];
     int a=0;
     int b =0;
