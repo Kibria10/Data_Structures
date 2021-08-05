@@ -71,6 +71,7 @@ public class A51_streamCipher {
         System.out.println("Major: " + major);
 
 /////////////// key is how many times we want our key bits to be produced ///////////////
+        System.out.println();
         for(int key = 0; key<4; key++){
             System.out.println("For Key:"+ key);
 ///////////////////FOR X/////////////////
@@ -140,6 +141,8 @@ public class A51_streamCipher {
             else{ System.out.println("Matched with major. Thus no need to right shift and setting the X-or value to 0'th index.");}
 
             //saving the x-or value of last index of X, Y, Z array.
+            int printKey = x[x.length-1]^y[y.length-1]^z[z.length-1];
+            System.out.println("x[18]^y[21]^z[22]: "+ printKey);
             saved[key]= x[x.length-1]^y[y.length-1]^z[z.length-1];
         }
         return saved;
