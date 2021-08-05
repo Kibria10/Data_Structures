@@ -5,9 +5,9 @@ public class knapSack {
         int m = 41;
         int n = 467;
         int e = 1011011;
-        int sik[] = {2, 6, 10, 23, 50, 110, 250};
-        int gk[] = new int[sik.length];
-        int keysAddition[] = new int [sik.length];
+        int[] sik = {2, 6, 10, 23, 50, 110, 250};
+        int[] gk = new int[sik.length];
+        int[] keysAddition = new int [sik.length];
 
         //creating our General knapsack keys (public keys)
          for(int i =0; i< sik.length; i++)
@@ -46,11 +46,11 @@ public class knapSack {
         decryptKnapsack(S,sik);
         }
 
-    static int[] decryptKnapsack(int S, int sik[]){
+    static int[] decryptKnapsack(int S, int[] sik){
 
         System.out.println("DECRYPTING: ");
 
-    int saved[] = new int [sik.length];
+    int[] saved = new int [sik.length];
     int a=0;
     int b =0;
     //finding the first value, which is less than S
