@@ -33,17 +33,23 @@ public class knapSack {
         int inv=0;
         for (int x = 1; x < n; x++) {
             if (((m % n) * (x % n)) % n == 1) {
-                System.out.println(x);
+                System.out.println("Modular Inverse of m and n: "+ x);
                 inv = x;
             }
         }
         //creating S
         int S = (sum * inv) % n;
         System.out.println("S: "+ S);
+
+
+
         decryptKnapsack(S,sik);
         }
 
     static int[] decryptKnapsack(int S, int sik[]){
+
+        System.out.println("DECRYPTING: ");
+
     int saved[] = new int [sik.length];
     int a=0;
     int b =0;
@@ -63,7 +69,7 @@ public class knapSack {
             temp = sik[i]+temp;
         }
     }
-        System.out.println("The results after decryption: ");
+        System.out.println("The Results After Decryption: ");
         for (int i = 0; i< saved.length; i++){
             System.out.println(saved[i]);
         }
