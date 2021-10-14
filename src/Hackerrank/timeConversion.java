@@ -1,4 +1,4 @@
-package Hackerrank.easy;
+package Hackerrank;
 
 import java.io.*;
 import java.util.*;
@@ -38,7 +38,7 @@ class Result {
 
 }
 
-public class random1 {
+public class timeConversion {
     public static void main(String[] args) throws IOException, ParseException {
         Scanner sc = new Scanner(System.in);
 
